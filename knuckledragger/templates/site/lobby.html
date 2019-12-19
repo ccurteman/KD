@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="container">
+    <div class="accordion" id="accordionExample">
+        <!-- The Room Cards -->
+        {% for room in rooms %}
+        <div class="card ml-1 mr-1">
+            <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                    <div class="container">
+                        <div class="row">
+                            <!-- Room Name -->
+                            <div class="col-sm">
+                                <button class="btn btn-link" type="button" data-toggle="collapse"
+                                    data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    {{ room.room_name }}
+                                </button>
+                            </div>
+
+                            <!-- Room Author -->
+                            <div class="col-sm">
+                                <p class="lead text-muted font-weight-light">{{ room.authored_by }}</p>
+                            </div>
+
+                            <!-- Room Play Date -->
+                            <div class="col-sm">
+                                {% if room.sunday is True %}
+                                <p class="lead text-muted font-weight-light">Sun, </p>
+                                {% elif room.monday is True %}
+                                <p class="lead text-muted font-weight-light">Mon, </p>
+                                {% elif room.tuesday is True %}
+                                <p class="lead text-muted font-weight-light">Tues, </p>
+                                {% elif room.wednesday is True %}
+                                <p class="lead text-muted font-weight-light">Wed, </p>
+                                {% elif room.thursday is True %}
+                                <p class="lead text-muted font-weight-light">Thurs, </p>
+                                {% elif room.friday is True %}
+                                <p class="lead text-muted font-weight-light">Fri, </p>
+                                {% elif room.saturday is True %}
+                                <p class="lead text-muted font-weight-light">Sat, </p>
+                                {% endif %}
+                            </div>
+                            
+                            <!-- Room Play Time -->
+                            <div class="col-sm">
+                                <p class="lead text-muted font-weight-light">{{ room.time }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </h2>
+            </div>
+
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">{{ room.description }}</div>
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

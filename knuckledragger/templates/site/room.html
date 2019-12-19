@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{% static 'knuckledragger/room.css' %}">
+    <title>Knuckledragger</title>
+</head>
+
+<body>
+    <div id="player-info">
+        <button id="action-1">Action 1</button>
+        <button id="action-2">Action 2</button>
+        <button id="action-3">Action 3</button>
+        <button id="action-4">Action 4</button>
+    </div>
+    <div id="player-camera">User Camera</div>
+    <div id="player-2">Player 2</div>
+    <div id="player-3">Player 3</div>
+    <div id="player-4">Player 4</div>
+    <div id="player-5">Player 5</div>
+    <div id="map">Map Screen</div>
+
+    {% character %}
+</body>
+
+</html>

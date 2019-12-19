@@ -1,0 +1,100 @@
+/* Note: This example only works with Windows Insider Preview Builds 16237+ or the Fall Creators Update. */
+
+body {
+    font-family: segoe-ui_normal, Segoe UI, Segoe, Segoe WP, Helvetica Neue, Helvetica, sans-serif;
+    display: grid;
+    grid-template-areas:
+        "user-camera player-info player-info player-info"
+        "player-2 map map map"
+        "player-3 map map map"
+        "player-4 map map map"
+        "player-5 map map map";
+    grid-template-rows: 19.5% 19.5% 19.5% 19.5% 19.5%;
+    grid-template-columns: 24.5% 24.5% 24.5% 24.5%;
+    grid-gap: 1px;
+    height: 100vh;
+    margin: 10px;
+    justify-content: center;
+    background-color: black;
+}
+
+#player-info {
+    background: #707070;
+    grid-area: player-info;
+    display: grid;
+    grid-template-areas:
+        "action-1 action-2"
+        "action-3 action-4"
+}
+
+#player-camera {
+    background: #C9BFBF;
+    grid-area: user-camera;
+}
+
+#player-2 {
+    background: #C9BFBF;
+    grid-area: player-2;
+}
+
+#player-3 {
+    background: #C9BFBF;
+    grid-area: player-3;
+}
+
+#player-4 {
+    background: #C9BFBF;
+    grid-area: player-4;
+}
+
+#player-5 {
+    background: #C9BFBF;
+    grid-area: player-5;
+}
+
+#map {
+    background: #ABABAB;
+    grid-area: map;
+}
+
+aside {
+    background: #C9C9C9;
+    grid-area: aside;
+}
+
+footer {
+    background: #707070;
+    grid-area: footer;
+}
+
+#player-info,
+#player-camera,
+#player-2,
+#player-3,
+#player-4,
+#player-5,
+#map {
+    padding: 1%;
+    border: 1px solid black;
+}
+
+#action-1 {
+    grid-area: action-1;
+}
+
+#action-2 {
+    grid-area: action-2;
+}
+
+#action-3 {
+    grid-area: action-3;
+}
+
+#action-4 {
+    grid-area: action-4;
+}
+
+#back {
+    position: relative;
+    top: 0px;
+}
